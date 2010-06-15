@@ -65,7 +65,7 @@ unless RUBY_PLATFORM =~ /mswin|mingw/
   have_func 'mysql_ssl_set'
 end
 
-$CFLAGS << ' -Wall ' unless RUBY_PLATFORM =~ /mswin/
+$CFLAGS << ' -Wall ' unless RUBY_PLATFORM =~ /mswin/ or RUBY_PLATFORM =~ /sparc-solaris2.10/
 
 if RUBY_VERSION < '1.8.6'
   $CFLAGS << ' -DRUBY_LESS_THAN_186'
